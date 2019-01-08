@@ -6,13 +6,18 @@
 
 ## 背包问题：
 重量为m，价值为v
+- 01背包问题 backpack_01.py
+- 完全背包问题 backpack_full.py
 
 ## 购买彩票的最佳时期：
 - maxProfit.py
 
 ## 硬币问题：
 ###硬币找零
+-coinChange.py
+
 ###硬币组合
+- coinChangeII.py
 
 ## 最长公共子序列（LCS）：
 最长公共子串
