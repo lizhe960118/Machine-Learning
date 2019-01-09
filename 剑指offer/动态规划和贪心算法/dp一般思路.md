@@ -13,10 +13,10 @@
 - maxProfit.py
 
 ## 硬币问题：
-###硬币找零
+### 硬币找零
 - coinChange.py
 
-###硬币组合
+### 硬币组合
 - coinChangeII.py
 
 ## 最长公共子序列（LCS）：
