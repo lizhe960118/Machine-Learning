@@ -14,18 +14,24 @@
 
 ## 硬币问题：
 ###硬币找零
--coinChange.py
+- coinChange.py
 
 ###硬币组合
 - coinChangeII.py
 
 ## 最长公共子序列（LCS）：
+- find_LongestCommonSubsequence.py
 最长公共子串
+- find_longestCommonSubstring.py
 
 ## 最长递增子序列（LIS）
+- find_LongestIncreaseSubsequence.py
 
 ## 最长回文子序列：
+- find_longestPalindromeSubseq.py
 最长回文子串
+- find_longestPalindromeSubstring.py
+- [马拉车算法](https://blog.csdn.net/sinat_35261315/article/details/78267046)
 
 ## 最大连续子序列和
 - maxSubArray.py
@@ -44,6 +50,7 @@
 ## 有代价的最短路径
 
 ## 瓷砖覆盖
+- [状态压缩dp](https://hongqiang.iteye.com/blog/1625215)
 
 ## 工作量划分
 
