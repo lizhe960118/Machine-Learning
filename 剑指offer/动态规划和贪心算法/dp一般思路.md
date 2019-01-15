@@ -44,6 +44,7 @@
 - maximalSquare.py
 
 ## 鹰蛋问题
+- powerEggs.py
 
 ## 矩阵链乘法
 
