@@ -17,8 +17,12 @@ class Solution(object):
         	return None
         if p == root or q == root:
         	return root
+        # 分治算法
+        # divide
         left = self.lowestCommonAncestor(root.left, p, q)
         right = self.lowestCommonAncestor(root.right, p, q)
+        
+        # conquer
         if left and right:
         	return root
         elif left:
