@@ -7,6 +7,7 @@ class TreeNode(object):
 
 class Solution():
     def inorderNoRecursion(self, root):
+        # 左，根，右
         result = []
         if root is None:
             return result
