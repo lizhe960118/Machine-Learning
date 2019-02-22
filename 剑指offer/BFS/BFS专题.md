@@ -3,7 +3,7 @@
 ## 树上的BFS
 ### 树的层级遍历（队列）
 - BinaryTreeLevelOrderTraveral.py
-### 二叉树的序列化
+### 二叉树的序列化（将树写入一个文件）
 - BinaryTreeSerialization.py
 
 ## 图上的BFS
