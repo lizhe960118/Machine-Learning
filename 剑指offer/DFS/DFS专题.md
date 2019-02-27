@@ -23,15 +23,3 @@
 ### 单词阶梯(给出两个单词start，end和一个字典，找出start变换到end的最短序列，每次变换只改变一个字母)
 - wordLadder.py
 - wordLadderII.py (找出所有的最短变换序列）
-
-## 栈的使用（No Recursion）
-### 字符串解码（将一个表达式展开为字符串）
-- ExpressionExpand.py
-### 摊平嵌套的列表（列表中元素还是列表）
-- FlattenNestedListIterator.py
-### 用栈实现队列
-- MyQueue.py
-### 直方图中的最大面积
-- largestRectangleArea.py
-### 最小栈
-- Minstack.py

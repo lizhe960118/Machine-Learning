@@ -7,7 +7,7 @@
 class Solution(object):
     def getIntersectionNode(self, headA, headB):
         """
-        :type head1, head1: ListNode
+        :type headA, headB: ListNode
         :rtype: ListNode
         """
         # 算出长链表比短链表多的长度，让长链表多走k步
@@ -23,12 +23,14 @@ class Solution(object):
         while(tmpB):
             tmpB = tmpB.next
             lenB += 1
+
         if lenA > lenB:
             for i in range(lenA - lenB):
                 headA = headA.next
         else:
             for i in range(lenB - lenA):
                 headB = headB.next
+
         while(headA != headB):
             headA = headA.next
             headB = headB.next

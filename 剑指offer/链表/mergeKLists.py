@@ -17,9 +17,12 @@ class Solution(object):
                 res_list.append(l.val)
                 l = l.next
         res_list.sort()
-        head = ListNode(-1)
-        res = head
+
+        dummy = ListNode(-1)
+        head = dummy
+
         for num in res_list:
             head.next = ListNode(num)
             head = head.next
-        return res.next
+            
+        return dummy.next

@@ -5,7 +5,7 @@
 #         self.end = e
 
 class Solution(object):
-    def merge(self, intervals):
+    def mergeIntervals(self, intervals):
         """
         :type intervals: List[Interval]
         :rtype: List[Interval]

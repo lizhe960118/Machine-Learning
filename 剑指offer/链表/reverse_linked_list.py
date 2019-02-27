@@ -10,14 +10,16 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        res = None
-        next_node = None
-        while(head is not None):
-            next_node = head.next
-            head.next = res
-            res = head
-            head = next_node
-        return res
+        prev = None
+        cur_node = head
+
+        while(cur_node is not None):
+            tmp = cur_node.next # tmp is listNode 保存节点，next在右
+            cur_node.next = prev # 更改节点指向，next在左
+            # 前进,滞后的指针先前进
+            prev = cur_node
+            cur_node = tmp
+        return prev
 
 class Solution(object):
     def reverseList(self, head):
