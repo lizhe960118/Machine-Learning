@@ -5,23 +5,24 @@ def quickSortHelper(arr, start, end):
     if start >= end:
         return
         
-    pivot = arr[start]
+    pivot = arr[start + (end - start) // 2]
     
     left = start
     right = end
 
-    while left < right:
-        while arr[right] >= pivot  and left < right:
+    while left <= right:
+        while arr[right] > pivot  and left <= right:
             right -= 1
-        while arr[left] <= pivot and left < right:
+        while arr[left] < pivot and left <= right:
             left += 1
-        if left < right:
+        if left <= right:
             arr[left], arr[right] = arr[right], arr[left]
+            left += 1
+            right -= 1
 
-    arr[left], arr[start] = arr[start], arr[left]
     
-    quickSortHelper(arr, start, left - 1)
-    quickSortHelper(arr, left + 1, end)
+    quickSortHelper(arr, start, right)
+    quickSortHelper(arr, left, end)
     return arr
 
 print(quick_sort([3,2,1,6,5,4]))
