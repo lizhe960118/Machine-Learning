@@ -56,3 +56,31 @@
 ## 工作量划分
 
 ## 三路取苹果
+
+## Triangle
+- http://www.lintcode.com/problem/triangle/
+
+## MinimunPathSum
+- http://www.lintcode.com/problem/minimum-path-sum/
+
+## UniquePath
+- http://www.lintcode.com/problem/unique-paths/
+
+## JumpGame
+- http://www.lintcode.com/en/problem/jump-game/
+- http://www.lintcode.com/en/problem/jump-game-ii/
+
+## LongestIncreasingSbusequence
+- http://www.lintcode.com/problem/longest-increasing-subsequence/
+
+## perfectSquare
+- http://www.lintcode.com/en/problem/perfect-squares/
+
+## largestDivisibleSubset
+- http://www.lintcode.com/en/problem/largest-divisible-subset/
+
+## 俄罗斯套娃
+- http://www.lintcode.com/en/problem/russian-doll-envelopes/
+
+## 青蛙过河
+- http://www.lintcode.com/en/problem/frog-jump/
