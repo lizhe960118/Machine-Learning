@@ -20,3 +20,5 @@ void func(void){
 	cout << i << " ";
 	cout << count << endl; 
 }
+
+
