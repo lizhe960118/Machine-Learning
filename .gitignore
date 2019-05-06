@@ -1,1 +1,5 @@
 *.exe
+leetcode_c++/.vscode/
+*.csv
+*.xml
+*.txt
