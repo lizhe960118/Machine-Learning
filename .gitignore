@@ -3,3 +3,5 @@ leetcode_c++/.vscode/
 *.csv
 *.xml
 *.txt
+*.out
+leetcode_c++/*.out.dSYM/
