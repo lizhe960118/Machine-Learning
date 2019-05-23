@@ -1,13 +1,10 @@
 *.exe
-leetcode_c++/.vscode/
 *.csv
 *.xml
 *.txt
 *.out
-leetcode_c++/*.out.dSYM/
 C++_code/.vscode/
-C++_code/c++_primer/*.out.dSYM/
-C++_code/STL_learn/*/*.out.dSYM/
+leetcode_c++/.vscode/
 */*/*.out.dSYM/
 */*/*/*.out.dSYM/
 */*.out.dSYM/
