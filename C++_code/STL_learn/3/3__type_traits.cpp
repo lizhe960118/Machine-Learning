@@ -75,3 +75,33 @@ __STL_TEMPLATE_NULL struct __type_traits<char> {
     typedef __true_type is_POD_type;
 }
 
+// 为了效率考虑，在适当情况下选择最合适的手段， copy函数
+// 拷贝一个数组，其元素为任意型别
+template <class T> 
+inline void copy (T* source, T* destination, int n) {
+    copy(source, destination, n, typename __type_traits<T>::has_trivial_default_constructor());
+}
+
+template <class T> 
+void copy (T* source, T* destination, int n, __false_type){
+    // 其元素拥有 non-trivial copy constructors
+}
+
+template <class T> 
+void copy (T* source, T* destination, int n, __true_type){
+    // 可借助 memcpy() 完成工作
+}
+
+// 对于自定义的型别，未指定，则 __type_traits 萃取出来的都是 __false_type
+// 除非特化 __type_traits
+template <> 
+struct __type_traits<Shape>{
+    typedef __true_type has_trivial_default_constructor;
+    // 如果 class 有指针类型成员， 并对它进行动态内存分配，则必须实现 has_trivial_xxx; 
+    typedef __false_type has_trivial_copy_constructor;
+    typedef __false_type has_trivial_assignment_operator;
+    typedef __false_type has_trivial_destructor;
+    typedef __false_type is_POD_type;
+};
+
+
