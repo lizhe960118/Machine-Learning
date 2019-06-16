@@ -97,7 +97,7 @@ void copy (T* source, T* destination, int n, __true_type){
 template <> 
 struct __type_traits<Shape>{
     typedef __true_type has_trivial_default_constructor;
-    // 如果 class 有指针类型成员， 并对它进行动态内存分配，则必须实现 has_trivial_xxx; 
+    // 如果 class 有指针类型成员， 并对它进行动态内存分配，则必须实现 non_trivial_xxx; 
     typedef __false_type has_trivial_copy_constructor;
     typedef __false_type has_trivial_assignment_operator;
     typedef __false_type has_trivial_destructor;
