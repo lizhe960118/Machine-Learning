@@ -141,3 +141,56 @@ void vector<T, Alloc>::insert_aux(iterator position, const T& x){
         end_of_storage = new_start + len;
     }
 }
+
+template <class T, class Alloc>
+void vector<T, Alloc>::insert(iterator position, size_type n, const T& x){
+    if (n != 0){
+        if (size_type(end_of_storage - finish) >= n){// 备用空间大于等于新增元素个数
+            T x_copy = x;
+            const size_type elem_after = finish - position;
+            iterator old_finish = finish;
+            if (n >= elem_after){
+            // 新增元素个数n大于等于插入点后面的元素个数k，在最后先填充一部分元素，再把插入点后面的元素复制到最后，最后在开始位置填充
+                uninitialized_fill(finish, n - elem_after, finish);
+                finish += n - elem_after;
+                uninitialized_copy(position, old_finish, finish);
+                finish += elem_after;
+                fill(position, old_finish, x_copy);
+            } else {
+            // 新增元素个数n小于插入点后面元素个数k，先复制n个元素到最后，再复制k-n个元素到finish之前，最后在开始位置填充
+                uninitialized_copy(finish - n, finish, finish);
+                finish += n;
+                copy_backward(position, old_finish - n, old_finish);
+                fill(position, position + n, x_copy);
+            }
+        } else {
+            // 备用空间小于新增元素个数
+            const size_type old_size = size();
+            const size_type len = old_size + max(old_size, n);
+            // 分配空间
+            iterator new_start = data_allocator::allocate(len);
+            iterator new_finish = new_start;
+            __STL_TRY{
+                // 将旧vector插入节点插入前的元素复制到新节点
+                new_finish = uninitialized_copy(start, position, new_start);
+                // 复制n个插入元素
+                new_finish = uninitialized_fill_n(new_finish, n, x);
+                // 将旧vector插入节点插入后的元素复制到新节点
+                new_finish = uninitialized_copy(position, finish, new_finish);
+            }
+            #ifdef __STL_USE_EXCEPTIONS
+                catch(...){
+                    destroy(new_start, new_finish);
+                    data_allocator::deallocate(new_start, len);
+                    throw;
+                }
+            #endif /* __STL_USE_EXCEPTIONS */
+            destroy(start, finish);
+            deallcote();
+            // 调整水位标志
+            start = new_start;
+            finish = new_finish;
+            end_of_storage = new_start + len;
+        }       
+    }
+}
