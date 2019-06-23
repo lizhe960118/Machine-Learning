@@ -105,8 +105,35 @@ sed -i "1254s/torch\.backends\.cudnn\.enabled/False/g"  ~/anaconda3/envs/centern
 ```
 
 ```python
-python main.py --arch=hourglass
+python main.py --arch=hourglass	
 ```
 
+# centetnet_key install
 
+```shell
+cd /train/results/CenterNet/models/py_utils/_cpools
+python setup.py install --user
+
+cd /train/trainset/1/coco/PythonAPI
+make
+
+cd /train/results/CenterNet/external
+make
+```
+
+```shell
+ln -snf 【新目标目录】 【软链接地址】
+touch .tmux.conf
+```
+
+```
+set -g prefix C-a
+unbind C-b
+bind r source-file ~/.tmux.conf
+```
+
+```python
+conda install jupyter notebool
+conda activate centernet
+```
 
